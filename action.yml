@@ -10,34 +10,34 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Update radxa-repo/bullseye${{ inputs.test-repo == true && '-test' || '' }}
+    - name: Update radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ inputs.token }}
-        repository: radxa-repo/bullseye${{ inputs.test-repo == true && '-test' || '' }}
-        event-type: ${{ inputs.reset == true && 'reset_repo' || 'new_package_release' }}
+        repository: radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
 
-    - name: Update radxa-repo/buster${{ inputs.test-repo == true && '-test' || '' }}
+    - name: Update radxa-repo/buster${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ inputs.token }}
-        repository: radxa-repo/buster${{ inputs.test-repo == true && '-test' || '' }}
-        event-type: ${{ inputs.reset == true && 'reset_repo' || 'new_package_release' }}
+        repository: radxa-repo/buster${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
 
-    - name: Update radxa-repo/jammy${{ inputs.test-repo == true && '-test' || '' }}
+    - name: Update radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ inputs.token }}
-        repository: radxa-repo/jammy${{ inputs.test-repo == true && '-test' || '' }}
-        event-type: ${{ inputs.reset == true && 'reset_repo' || 'new_package_release' }}
+        repository: radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
 
-    - name: Update radxa-repo/focal${{ inputs.test-repo == true && '-test' || '' }}
+    - name: Update radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ inputs.token }}
-        repository: radxa-repo/focal${{ inputs.test-repo == true && '-test' || '' }}
-        event-type: ${{ inputs.reset == true && 'reset_repo' || 'new_package_release' }}
+        repository: radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
