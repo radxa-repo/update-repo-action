@@ -8,7 +8,7 @@ jobs:
   reset-prod:
     runs-on: ubuntu-latest
     steps:
-      - name: Upload artifact
+      - name: Reset Production repos
         uses: radxa-repo/update-repo-action@main
         with:
           reset: true

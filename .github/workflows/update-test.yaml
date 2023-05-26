@@ -8,7 +8,7 @@ jobs:
   update-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Upload artifact
+      - name: Update Test repos
         uses: radxa-repo/update-repo-action@main
         with:
           test-repo: true
