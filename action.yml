@@ -16,7 +16,7 @@ runs:
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/bullseye${{ inputs.test-repo && '-test' }}
-        event-type: ${{ reset && 'reset_repo' || 'new_package_release' }}
+        event-type: ${{ inputs.reset && 'reset_repo' || 'new_package_release' }}
 
     - name: Update radxa-repo/buster${{ inputs.test-repo && '-test' }}
       if: 
@@ -24,7 +24,7 @@ runs:
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/buster${{ inputs.test-repo && '-test' }}
-        event-type: ${{ reset && 'reset_repo' || 'new_package_release' }}
+        event-type: ${{ inputs.reset && 'reset_repo' || 'new_package_release' }}
 
     - name: Update radxa-repo/jammy${{ inputs.test-repo && '-test' }}
       if: 
@@ -32,7 +32,7 @@ runs:
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/jammy${{ inputs.test-repo && '-test' }}
-        event-type: ${{ reset && 'reset_repo' || 'new_package_release' }}
+        event-type: ${{ inputs.reset && 'reset_repo' || 'new_package_release' }}
 
     - name: Update radxa-repo/focal${{ inputs.test-repo && '-test' }}
       if: 
@@ -40,4 +40,4 @@ runs:
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/focal${{ inputs.test-repo && '-test' }}
-        event-type: ${{ reset && 'reset_repo' || 'new_package_release' }}
+        event-type: ${{ inputs.reset && 'reset_repo' || 'new_package_release' }}
