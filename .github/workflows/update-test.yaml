@@ -5,7 +5,7 @@ on:
 permissions: {}
 
 jobs:
-  build-doc:
+  update-test:
     runs-on: ubuntu-latest
     steps:
       - name: Upload artifact
