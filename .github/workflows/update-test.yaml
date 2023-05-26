@@ -1,0 +1,15 @@
+name: Update Test repos
+on:
+  workflow_dispatch:
+
+permissions:
+
+jobs:
+  build-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload artifact
+        uses: radxa-repo/update-repo-action@main
+        with:
+          test-repo: true
+          token: ${{ secrets.RADXA_APT_TEST_REPO_TOKEN }}
