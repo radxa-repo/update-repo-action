@@ -2,7 +2,7 @@ name: Reset Production repos
 on:
   workflow_dispatch:
 
-permissions:
+permissions: {}
 
 jobs:
   build-doc:

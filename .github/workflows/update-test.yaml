@@ -2,7 +2,7 @@ name: Update Test repos
 on:
   workflow_dispatch:
 
-permissions:
+permissions: {}
 
 jobs:
   build-doc:
