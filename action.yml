@@ -41,3 +41,11 @@ runs:
         token: ${{ inputs.token }}
         repository: radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
         event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
+
+    - name: Update radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
+      if: 
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ inputs.token }}
+        repository: radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
