@@ -5,10 +5,10 @@ on:
 permissions: {}
 
 jobs:
-  update-test:
+  reset-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Update Test repos
+      - name: Reset Test repos
         uses: radxa-repo/update-repo-action@main
         with:
           reset: true

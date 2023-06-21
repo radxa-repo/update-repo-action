@@ -5,7 +5,7 @@ on:
 permissions: {}
 
 jobs:
-  reset-prod:
+  update-prod:
     runs-on: ubuntu-latest
     steps:
       - name: Update Production repos
