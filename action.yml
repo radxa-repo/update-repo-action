@@ -12,7 +12,7 @@ runs:
   steps:
     - name: Update radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
@@ -20,7 +20,7 @@ runs:
 
     - name: Update radxa-repo/buster${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/buster${{ inputs.test-repo == 'true' && '-test' || '' }}
@@ -28,7 +28,7 @@ runs:
 
     - name: Update radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
@@ -36,7 +36,7 @@ runs:
 
     - name: Update radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
@@ -44,7 +44,7 @@ runs:
 
     - name: Update radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
       if: 
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
