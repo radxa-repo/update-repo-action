@@ -11,33 +11,23 @@ runs:
   using: "composite"
   steps:
     - name: Update radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
-      if: 
       uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/bullseye${{ inputs.test-repo == 'true' && '-test' || '' }}
         event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
 
-    - name: Update radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
-      if: 
-      uses: peter-evans/repository-dispatch@v3
-      with:
-        token: ${{ inputs.token }}
-        repository: radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
-        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
-
-    - name: Update radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
-      if: 
-      uses: peter-evans/repository-dispatch@v3
-      with:
-        token: ${{ inputs.token }}
-        repository: radxa-repo/focal${{ inputs.test-repo == 'true' && '-test' || '' }}
-        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
-
     - name: Update radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
-      if: 
       uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ inputs.token }}
         repository: radxa-repo/bookworm${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
+
+    - name: Update radxa-repo/sid${{ inputs.test-repo == 'true' && '-test' || '' }}
+      if: inputs.test-repo == 'true'
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ inputs.token }}
+        repository: radxa-repo/sid${{ inputs.test-repo == 'true' && '-test' || '' }}
         event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
