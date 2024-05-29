@@ -39,3 +39,11 @@ runs:
         token: ${{ inputs.token }}
         repository: radxa-repo/jammy${{ inputs.test-repo == 'true' && '-test' || '' }}
         event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
+
+    - name: Update radxa-repo/noble${{ inputs.test-repo == 'true' && '-test' || '' }}
+      if: inputs.test-repo == 'true'
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ inputs.token }}
+        repository: radxa-repo/noble${{ inputs.test-repo == 'true' && '-test' || '' }}
+        event-type: ${{ inputs.reset == 'true' && 'reset_repo' || 'new_package_release' }}
